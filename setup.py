@@ -16,5 +16,6 @@ setup(
     license='APGL-3.0',
     author='isik-kaplan',
     author_email='',
+    python_requires=">=3.5",
     install_requires=['django>=2.0']
 )
