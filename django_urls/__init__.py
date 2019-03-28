@@ -26,7 +26,7 @@ def _glob_init(name):
 class UrlManager:
     def __init__(self, views_root):
         self.views_root = views_root
-        self._url_patters = []
+        self._url_patterns = []
 
     def _path(self, route, kwargs=None, name=None, is_re=None):
         func = _re_path if is_re else _path
@@ -34,7 +34,7 @@ class UrlManager:
         def decorator(view):
             if isinstance(view, type):
                 view = view.as_view()
-            self._url_patters.append(
+            self._url_patterns.append(
                 func(route, view, kwargs=kwargs, name=name or view.__name__)
             )
             return view
@@ -54,5 +54,4 @@ class UrlManager:
         else:
             for root in self.views_root:
                 _glob_init(root)
-
-        return self._url_patters
+        return self._url_patterns
