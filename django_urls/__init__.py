@@ -4,13 +4,15 @@ from importlib import import_module
 
 from django.urls import re_path as _re_path, path as _path
 
+separator = os.sep
+
 
 def _glob_init(name):
-    name = name.replace('.', '\\')
-    path = '\\' + '**'
+    name = name.replace('.', separator)
+    path = separator + '**'
     modules = []
     for module in glob(name + path, recursive=True):
-        importable = os.path.splitext(module)[0].replace('\\', '.')
+        importable = os.path.splitext(module)[0].replace(separator, '.')
         if '__' in importable:
             continue
         try:
