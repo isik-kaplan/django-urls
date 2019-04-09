@@ -30,12 +30,13 @@ class UrlManager:
         func = _re_path if is_re else _path
 
         def decorator(view):
+            _view = view  # keep the original view
             if isinstance(view, type):
                 view = view.as_view()
             self._url_patterns.append(
                 func(route, view, kwargs=kwargs, name=name or view.__name__)
             )
-            return view
+            return _view
 
         return decorator
 
