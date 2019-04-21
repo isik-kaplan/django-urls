@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/isik-kaplan/django_urls.svg?branch=master)](https://travis-ci.com/isik-kaplan/django_urls)
+![PyPI - License](https://img.shields.io/pypi/l/django-urls.svg)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/django-urls.svg)
+ 
 ## What is *django_urls*?
 
 It is flask style urls for django. 
