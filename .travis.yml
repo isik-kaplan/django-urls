@@ -4,6 +4,8 @@ python:
   - "3.6"
 install:
   - pip install django
+script:
+  - python -c "__import__('sys').exit(0)" # We don't have any tests but script is required
 deploy:
   provider: pypi
   user: isik-kaplan
