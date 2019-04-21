@@ -22,7 +22,7 @@ def _glob_init(name):
 
 
 class UrlManager:
-    def __init__(self, views_root):
+    def __init__(self, views_root=None):
         self.views_root = views_root
         self._url_patterns = []
 
@@ -48,9 +48,10 @@ class UrlManager:
 
     @property
     def url_patterns(self):
-        if isinstance(self.views_root, str):
-            _glob_init(self.views_root)
-        else:
-            for root in self.views_root:
-                _glob_init(root)
+        if self.views_root:
+            if isinstance(self.views_root, str):
+                _glob_init(self.views_root)
+            else:
+                for root in self.views_root:
+                    _glob_init(root)
         return self._url_patterns
