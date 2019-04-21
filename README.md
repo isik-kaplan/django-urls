@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/isik-kaplan/django_urls.svg?branch=master)](https://travis-ci.com/isik-kaplan/django_urls)
 [![PyPI - License](https://img.shields.io/pypi/l/django-urls.svg)](https://pypi.org/project/django-urls/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/django-urls.svg)]((https://pypi.org/project/django-urls/))
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/django-urls.svg)](https://pypi.org/project/django-urls/)
  
 ## What is *django_urls*?
 
