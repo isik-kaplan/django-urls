@@ -10,13 +10,10 @@ def _glob_init(name):
     path = os.sep + '**'
     modules = []
     for module in glob(name + path, recursive=True):
-        importable = os.path.splitext(module)[0].replace(os.sep, '.')
+        importable = os.path.splitext(module)[0].replace(os.sep, '.').rstrip('.')
         if '__' in importable:
             continue
-        try:
-            module = import_module(importable)
-        except ModuleNotFoundError:
-            module = import_module(importable[:-1])
+        module = import_module(importable)
         modules.append(module)
     return modules
 
