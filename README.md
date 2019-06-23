@@ -12,6 +12,8 @@ It is flask style urls for django.
 # app/urls.py or where-ever you want really.
 from django_urls import UrlManager
 app_urls = UrlManager(views_root='dotted.path.to.app.views.module')
+
+app_urls.extend(extra_urls_list)
 ```
 
 ```python

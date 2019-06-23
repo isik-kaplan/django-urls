@@ -43,6 +43,10 @@ class UrlManager:
     def re_path(self, route, kwargs=None, name=None):
         return self._path(route, kwargs=kwargs, name=name, is_re=True)
 
+    def extend(self, urlpatterns):
+        self._url_patterns.extend(urlpatterns)
+        return self._url_patterns
+
     @property
     def url_patterns(self):
         if self.views_root:
