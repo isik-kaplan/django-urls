@@ -11,9 +11,12 @@ setup(
     description="URL decorator for django views",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    license='APGL-3.0',
+    license='AGPL-3.0-only',
     author='isik-kaplan',
     author_email='',
     python_requires=">=3.5",
-    install_requires=['django>=2.0']
+    install_requires=['django>=2.0'],
+    classifiers=[
+        'License :: OSI Approved :: GNU Affero General Public License v3'
+    ],
 )
