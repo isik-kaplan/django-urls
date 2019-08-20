@@ -6,12 +6,12 @@ from django.urls import re_path as _re_path, path as _path
 
 
 def _glob_init(name):
-    name = name.replace('.', os.sep)
-    path = os.sep + '**'
+    name = name.replace(".", os.sep)
+    path = os.sep + "**"
     modules = []
     for module in glob(name + path, recursive=True):
-        importable = os.path.splitext(module)[0].replace(os.sep, '.').rstrip('.')
-        if '__' in importable:
+        importable = os.path.splitext(module)[0].replace(os.sep, ".").rstrip(".")
+        if "__" in importable:
             continue
         module = import_module(importable)
         modules.append(module)
