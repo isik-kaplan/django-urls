@@ -21,11 +21,11 @@ app_urls.extend(extra_urls_list)
 
 from app.urls import app_urls
 
-@app_urls.path('path/', name='MyView')
+@app_urls.path('path/', name='MyView', importance=5) # the bigger the importance higher in the list it goes
 class MyView(View):
     ...
     
-@app_urls.re_path('path2/', name='my_view')
+@app_urls.re_path('path2/', name='my_view', importance=1)
 def my_view(request):
     ...    
 ```
