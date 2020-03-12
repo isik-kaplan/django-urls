@@ -23,7 +23,8 @@ class UrlManager:
         self.views_root = views_root
         self._url_patterns = []
 
-    def _path(self, route, kwargs=None, name=None, is_re=None):
+    def _path(self, route, kwargs=None, name=None, is_re=None, importance=None):
+        importance = int(importance)
         func = _re_path if is_re else _path
 
         def decorator(view):
@@ -31,17 +32,17 @@ class UrlManager:
             if isinstance(view, type):
                 view = view.as_view()
             self._url_patterns.append(
-                func(route, view, kwargs=kwargs, name=name or view.__name__)
+               (func(route, view, kwargs=kwargs, name=name or view.__name__), importance)
             )
             return _view
 
         return decorator
 
-    def path(self, route, kwargs=None, name=None):
-        return self._path(route, kwargs=kwargs, name=name, is_re=False)
+    def path(self, route, kwargs=None, name=None, importance=None):
+        return self._path(route, kwargs=kwargs, name=name, is_re=False, importance=importance)
 
-    def re_path(self, route, kwargs=None, name=None):
-        return self._path(route, kwargs=kwargs, name=name, is_re=True)
+    def re_path(self, route, kwargs=None, name=None, importance=None):
+        return self._path(route, kwargs=kwargs, name=name, is_re=True, importance=importance)
 
     def extend(self, urlpatterns):
         self._url_patterns.extend(urlpatterns)
@@ -55,4 +56,4 @@ class UrlManager:
             else:
                 for root in self.views_root:
                     _glob_init(root)
-        return self._url_patterns
+        return list(i[0] for i in sorted(self._url_patterns, key=lambda x: x[1]))
