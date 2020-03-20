@@ -17,6 +17,9 @@ setup(
     python_requires=">=3.5",
     install_requires=['django>=2.0'],
     classifiers=[
-        'License :: OSI Approved :: GNU Affero General Public License v3'
+        'License :: OSI Approved :: GNU Affero General Public License v3',
+        'Programming Language :: Python :: 3',
+        'Framework :: Django',
+        'Development Status :: 5 - Production/Stable',
     ],
 )
