@@ -23,7 +23,7 @@ class UrlManager:
         self.views_root = views_root
         self._url_patterns = []
 
-    def _path(self, route, kwargs=None, name=None, is_re=None, importance=None):
+    def _path(self, route, kwargs=None, name=None, is_re=None, importance=0):
         importance = int(importance)
         func = _re_path if is_re else _path
 

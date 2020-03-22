@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setup(
     name='django_urls',
-    version='1.1.0',
+    version='1.1.1',
     packages=['django_urls'],
     url='https://github.com/isik-kaplan/django_urls',
     description="URL decorator for django views",
