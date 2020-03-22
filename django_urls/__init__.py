@@ -38,10 +38,10 @@ class UrlManager:
 
         return decorator
 
-    def path(self, route, kwargs=None, name=None, importance=None):
+    def path(self, route, kwargs=None, name=None, importance=0):
         return self._path(route, kwargs=kwargs, name=name, is_re=False, importance=importance)
 
-    def re_path(self, route, kwargs=None, name=None, importance=None):
+    def re_path(self, route, kwargs=None, name=None, importance=0):
         return self._path(route, kwargs=kwargs, name=name, is_re=True, importance=importance)
 
     def extend(self, urlpatterns):
