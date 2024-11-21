@@ -1,4 +1,3 @@
-[![Build Status](https://github.com/isik-kaplan/django-urls/actions/workflows/tests.yml/badge.svg)](https://github.com/isik-kaplan/django-urls/actions/workflows/tests.yml/badge.svg)
 [![PyPI - License](https://img.shields.io/pypi/l/django-urls.svg)](https://pypi.org/project/django-urls/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/django-urls.svg)](https://pypi.org/project/django-urls/)
  
